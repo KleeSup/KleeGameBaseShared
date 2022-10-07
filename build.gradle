@@ -1,0 +1,26 @@
+plugins {
+    id 'java'
+}
+
+group 'de.kleesup.libraries.gamebase'
+version '1.0'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.1'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
+
+    // https://mvnrepository.com/artifact/com.esotericsoftware/kryo
+    implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.2.0'
+    // https://mvnrepository.com/artifact/com.esotericsoftware/kryonet
+    implementation group: 'com.esotericsoftware', name: 'kryonet', version: '2.22.7'
+
+
+}
+
+test {
+    useJUnitPlatform()
+}

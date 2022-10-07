@@ -1,12 +1,25 @@
 plugins {
     id 'java'
+    id 'maven-publish'
 }
 
 group 'de.kleesup.libraries.gamebase'
 version '1.0'
 
+sourceCompatibility = 1.8 // java 8
+targetCompatibility = 1.8
+
 repositories {
     mavenCentral()
+    maven { url "https://jitpack.io" }
+}
+
+publishing{
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
 }
 
 dependencies {
@@ -15,8 +28,7 @@ dependencies {
 
     // https://mvnrepository.com/artifact/com.esotericsoftware/kryo
     implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.2.0'
-    // https://mvnrepository.com/artifact/com.esotericsoftware/kryonet
-    implementation group: 'com.esotericsoftware', name: 'kryonet', version: '2.22.7'
+    implementation 'com.github.crykn:kryonet:2.22.7'
 
 
 }

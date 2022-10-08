@@ -1,7 +1,8 @@
 plugins {
     id 'java'
-    id 'maven-publish'
 }
+
+apply plugin: 'maven-publish'
 
 group 'de.kleesup.libraries.gamebase'
 version '1.1'
@@ -11,15 +12,7 @@ targetCompatibility = 1.8
 
 repositories {
     mavenCentral()
-    maven { url "https://jitpack.io" }
-}
-
-publishing{
-    publications {
-        maven(MavenPublication) {
-            from components.java
-        }
-    }
+    //maven { url "https://jitpack.io" }
 }
 
 dependencies {
@@ -31,6 +24,23 @@ dependencies {
     implementation 'com.github.crykn:kryonet:2.22.7'
 
 
+}
+
+java{
+    withSourcesJar()
+    withJavadocJar()
+}
+
+publishing{
+    publications {
+        maven(MavenPublication) {
+            from components.java
+        }
+    }
+}
+
+wrapper{
+    distributionType = Wrapper.DistributionType.ALL
 }
 
 test {

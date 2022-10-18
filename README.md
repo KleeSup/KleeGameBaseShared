@@ -1,12 +1,13 @@
 # KleeGameBaseShared
 A library from the KleeGameBase series that contains the classes shared between client and server
 
-To implement this library with Gradle and Jitpack add the following repository to your build.gradle
+[![](https://jitpack.io/v/KleeSup/KleeGameBaseShared.svg)](https://jitpack.io/#KleeSup/KleeGameBaseShared)
+To implement this library with Gradle and Jitpack add the following repository to your build.gradle:
 ```
 allprojects {
-	repositories {
-		maven { url 'https://jitpack.io' }
-	}
+  repositories {
+    maven { url 'https://jitpack.io' }
+  }
 }
 ```  
 Then add the dependency

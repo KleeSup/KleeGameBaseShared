@@ -22,4 +22,4 @@ dependencies {
 }
 ```
 Note that you need to replace the 'VERSION' part in the dependency with the newest version of the library.
-If the library still does not work after the gradle reload, please start the task ``buildDependents``.
+<br>If the library still does not work after the gradle reload, please run the ``buildDependents`` gradle task.</br>

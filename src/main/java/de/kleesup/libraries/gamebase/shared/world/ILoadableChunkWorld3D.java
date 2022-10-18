@@ -1,13 +1,13 @@
 package de.kleesup.libraries.gamebase.shared.world;
 
+import de.kleesup.libraries.gamebase.shared.KleeUtil;
 import de.kleesup.libraries.gamebase.shared.exception.GameException;
 
-import java.util.Objects;
 import java.util.concurrent.Future;
 
 /**
  * @author KleeSup
- * @version 1.0
+ * @version 1.1
  * Class created on 08.10.2022
  *
  * An implementation of {@link IChunkWorld3D} which is capable of loading and unloading chunks.
@@ -38,7 +38,7 @@ public interface ILoadableChunkWorld3D extends IChunkWorld3D {
      * @throws IllegalArgumentException If the chunk is null or not from this world.
      */
     default void unloadChunk(ILoadedChunk3D chunk){
-        Objects.requireNonNull(chunk, "Chunk cannot be null!");
+        KleeUtil.paramRequireNonNull(chunk, "Chunk cannot be null!");
         if(!this.equals(chunk.getWorld()))throw new IllegalArgumentException("World of the loaded chunk does not equal the world to unload it in.");
         unloadChunk(chunk.getChunkX(), chunk.getChunkY(), chunk.getChunkZ());
     }

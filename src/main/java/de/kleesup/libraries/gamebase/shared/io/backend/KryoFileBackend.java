@@ -4,16 +4,16 @@ import com.esotericsoftware.kryo.Kryo;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.esotericsoftware.kryo.serializers.MapSerializer;
-import de.kleesup.libraries.gamebase.shared.kryo.KryoRegisterer;
+import de.kleesup.libraries.gamebase.shared.KleeUtil;
+import de.kleesup.libraries.gamebase.shared.kryo.KryoUtil;
 
 import java.io.*;
 import java.net.URI;
-import java.util.Objects;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
  * @author KleeSup
- * @version 1.0
+ * @version 1.1
  * Class created on 07.10.2022
  *
  *
@@ -58,7 +58,7 @@ public class KryoFileBackend extends PairFileBackend<Object, Object> {
 
     private void init(final Kryo kryo) throws IOException {
         if(kryo == null)throw new NullPointerException("Kryo cannot be null!");
-        if(!KryoRegisterer.isClassRegistered(ConcurrentHashMap.class, kryo)){
+        if(!KryoUtil.isClassRegistered(ConcurrentHashMap.class, kryo)){
             kryo.register(ConcurrentHashMap.class, serializer);
         }
         if(!exists())return;
@@ -98,9 +98,9 @@ public class KryoFileBackend extends PairFileBackend<Object, Object> {
 
     @Deprecated
     public Object registerAndSet(final Object key, final Object value){
-        Objects.requireNonNull(key, "Key cannot be null");
-        if(!KryoRegisterer.isClassRegistered(key.getClass(),kryo))kryo.register(key.getClass());
-        if(value != null && !KryoRegisterer.isClassRegistered(value.getClass(),kryo))kryo.register(value.getClass());
+        KleeUtil.paramRequireNonNull(key, "Key cannot be null");
+        if(!KryoUtil.isClassRegistered(key.getClass(),kryo))kryo.register(key.getClass());
+        if(value != null && !KryoUtil.isClassRegistered(value.getClass(),kryo))kryo.register(value.getClass());
         return root.put(key,value);
     }
 

@@ -2,10 +2,10 @@ package de.kleesup.libraries.gamebase.shared;
 
 /**
  * @author KleeSup
- * @version 1.0
+ * @version 1.1
  * Class created on 07.10.2022
  *
- * Am interface for data pairs (key-value principle).
+ * An interface for data pairs (key-value principle).
  * @since 1.0
  */
 public interface PairContainer<K, V> {

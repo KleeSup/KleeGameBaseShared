@@ -21,7 +21,7 @@ package de.kleesup.libraries.gamebase.shared.random;/*
 /**
  * @since 1.0
  */
-public class OpenSimplexNoise {
+public class OpenSimplexNoise implements Noise2D, Noise3D {
 
 	private static final double STRETCH_CONSTANT_2D = -0.211324865405187;    // (1/Math.sqrt(2+1)-1)/2;
 	private static final double SQUISH_CONSTANT_2D = 0.366025403784439;      // (Math.sqrt(2+1)-1)/2;

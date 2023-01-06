@@ -8,7 +8,7 @@ package de.kleesup.libraries.gamebase.shared.math;
  * A class that contains some simple mathematical functions.
  * @since 1.1
  */
-public class KleeMath {
+public final class KleeMath {
 
     /**
      * Checks the given value and retrieves it when it is between its max and min bounds. Otherwise, those boundaries are returned.

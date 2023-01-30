@@ -1,16 +1,16 @@
 package de.kleesup.libraries.gamebase.shared.world.impl;
 
-import de.kleesup.libraries.gamebase.shared.world.ISizeableWorld2D;
+import de.kleesup.libraries.gamebase.shared.world.ISizedWorld2D;
 
 /**
  * @author KleeSup
  * @version 1.0
  * Class created on 08.10.2022
  *
- * A simple implementation of {@link ISizeableWorld2D} which takes in the final world sizes by its constructor.
+ * A simple implementation of {@link ISizedWorld2D} which takes in the final world sizes by its constructor.
  * @since 1.0
  */
-public class SizeableWorld2D implements ISizeableWorld2D {
+public class SizeableWorld2D implements ISizedWorld2D {
 
     private final float minX, minY, maxX, maxY;
     public SizeableWorld2D(float minWorldX, float minWorldY, float maxWorldX, float maxWorldY) {

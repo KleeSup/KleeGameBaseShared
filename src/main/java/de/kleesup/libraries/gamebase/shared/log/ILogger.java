@@ -2,7 +2,7 @@ package de.kleesup.libraries.gamebase.shared.log;
 
 /**
  * @author KleeSup
- * @version 1.0
+ * @version 1.1
  * Class created on 07.10.2022
  *
  * Simple logger interface which is capable of logging the following tags:
@@ -25,8 +25,10 @@ public interface ILogger {
 
     void logInfo(final String msg);
     void logWarning(final String msg);
+    void logWarning(final String msg, final Throwable throwable);
     void logError(final String msg);
     void logError(final String msg, final Throwable throwable);
     void logDebug(final String msg);
+    void logDebug(final String msg, final Throwable throwable);
 
 }

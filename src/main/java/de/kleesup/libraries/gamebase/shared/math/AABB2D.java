@@ -1,5 +1,7 @@
 package de.kleesup.libraries.gamebase.shared.math;
 
+import com.badlogic.gdx.math.Rectangle;
+
 /**
  * @author KleeSup
  * @version 1.0

@@ -12,4 +12,6 @@ public interface Loadable {
 
     void load();
 
+    boolean isLoaded();
+
 }

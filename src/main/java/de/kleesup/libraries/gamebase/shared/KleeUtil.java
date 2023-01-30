@@ -4,13 +4,56 @@ import java.util.Objects;
 
 /**
  * @author KleeSup
- * @version 1.0
+ * @version 1.1
  * Class created on 17.10.2022
- *
+ * <p>
  * A simple utility class containing some helpful methods.
  * @since 1.1
  */
 public final class KleeUtil {
+
+    /*
+    Methods for each numeric type that check if a coordinate is within a 2D-grid.
+    */
+    public static boolean inBounds(byte x, byte y, byte width, byte height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    public static boolean inBounds(short x, short y, short width, short height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    public static boolean inBounds(int x, int y, int width, int height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    public static boolean inBounds(long x, long y, long width, long height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    public static boolean inBounds(float x, float y, float width, float height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    public static boolean inBounds(double x, double y, double width, double height){
+        return x >= 0 && x < width && y >= 0 && y < height;
+    }
+    /*
+    Methods for each numeric type that check if a coordinate is within a 3D-grid.
+    */
+    public static boolean inBounds(byte x, byte y, byte z, byte width, byte height, byte length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
+    public static boolean inBounds(short x, short y, short z, short width, short height, short length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
+    public static boolean inBounds(int x, int y, int z, int width, int height, int length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
+    public static boolean inBounds(long x, long y, long z, long width, long height, long length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
+    public static boolean inBounds(float x, float y, float z, float width, float height, float length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
+    public static boolean inBounds(double x, double y, double z, double width, double height, double length){
+        return x >= 0 && x < width && y >= 0 && y < height && z >= 0 && z < length;
+    }
 
     /**
      * Determines if a specific code part is throwing certain exceptions.

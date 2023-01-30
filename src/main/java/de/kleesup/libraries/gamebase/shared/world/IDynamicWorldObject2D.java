@@ -1,11 +1,11 @@
 package de.kleesup.libraries.gamebase.shared.world;
 
-import de.kleesup.libraries.gamebase.shared.Velocity2D;
+import com.badlogic.gdx.math.Vector2;
 
 /**
  * <br>Created on 19.10.2022</br>
  * A {@link IWorldObject2D} which implements functions to move it in a world.
- * It can be teleported directly or physical calculations can be applied to its {@link Velocity2D}
+ * It can be teleported directly or physical calculations can be applied to its {@link Vector2}
  * which then requires an implementation for moving this object based on its velocity.
  * @author KleeSup
  * @version 1.0
@@ -43,6 +43,6 @@ public interface IDynamicWorldObject2D extends IWorldObject2D {
     Getter
     */
 
-    Velocity2D getVelocity();
+    Vector2 getVelocity();
 
 }

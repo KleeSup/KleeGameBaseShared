@@ -1,6 +1,6 @@
 package de.kleesup.libraries.gamebase.shared.io.backend;
 
-import de.kleesup.libraries.gamebase.shared.ObjectDisposable;
+import com.badlogic.gdx.utils.Disposable;
 import de.kleesup.libraries.gamebase.shared.io.manager.AdvancedFile;
 
 import java.io.File;
@@ -14,7 +14,7 @@ import java.net.URI;
  *
  * A basement class for data management with files.
  */
-public class FileBackend extends AdvancedFile implements ObjectDisposable {
+public class FileBackend extends AdvancedFile implements Disposable {
     public FileBackend(String pathname) {
         super(pathname);
     }

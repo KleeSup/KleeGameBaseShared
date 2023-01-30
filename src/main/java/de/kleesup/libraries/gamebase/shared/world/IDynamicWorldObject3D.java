@@ -1,11 +1,11 @@
 package de.kleesup.libraries.gamebase.shared.world;
 
-import de.kleesup.libraries.gamebase.shared.Velocity3D;
+import com.badlogic.gdx.math.Vector3;
 
 /**
  * <br>Created on 19.10.2022</br>
  * A {@link IWorldObject3D} which implements functions to move it in a world.
- * It can be teleported directly or physical calculations can be applied to its {@link Velocity3D}
+ * It can be teleported directly or physical calculations can be applied to its {@link Vector3}
  * which then requires an implementation for moving this object based on its velocity.
  * @author KleeSup
  * @version 1.0
@@ -45,6 +45,6 @@ public interface IDynamicWorldObject3D extends IWorldObject3D {
     Getter
      */
 
-    Velocity3D getVelocity();
+    Vector3 getVelocity();
 
 }

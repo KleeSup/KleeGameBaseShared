@@ -3,7 +3,7 @@ package de.kleesup.libraries.gamebase.shared.math;
 import com.badlogic.gdx.math.Vector2;
 
 /**
- * A wrapper class of {@link Vector2} from LibGDX.
+ * A wrapper class for {@link Vector2} from LibGDX.
  * <br>Created on 30.01.2023</br>
  * @author KleeSup
  * @version 1.0

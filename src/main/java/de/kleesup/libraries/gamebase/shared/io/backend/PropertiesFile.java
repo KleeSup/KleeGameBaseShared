@@ -9,12 +9,12 @@ import java.net.URI;
 import java.util.Properties;
 
 /**
- * @author KleeSup
- * @version 1.0
- * Class created on 07.10.2022
  *
  * Implementation of {@link PairFileBackend} which manages Javas properties files.
- * Reference: https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html
+ * <br>Reference: <a href="https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html">https://docs.oracle.com/javase/7/docs/api/java/util/Properties.html</a></br>
+ * <br>Class created on 07.10.2022</br>
+ * @author KleeSup
+ * @version 1.0
  * @since 1.0
  */
 public class PropertiesFile extends PairFileBackend<Object, Object> {

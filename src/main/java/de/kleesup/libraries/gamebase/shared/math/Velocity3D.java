@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 
 /**
- * A wrapper class of {@link Vector3} from LibGDX.
+ * A wrapper class for {@link Vector3} from LibGDX.
  * <br>Created on 30.01.2023</br>
  * @author KleeSup
  * @version 1.0

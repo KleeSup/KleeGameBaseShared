@@ -26,6 +26,25 @@ public class AABB2D {
     }
 
     /*
+    Determine if other AABB is overlapped/contained.
+    */
+
+    public boolean contains (AABB2D other) {
+        float xmin = other.x;
+        float xmax = xmin + other.width;
+
+        float ymin = other.y;
+        float ymax = ymin + other.height;
+
+        return ((xmin > x && xmin < x + width) && (xmax > x && xmax < x + width))
+                && ((ymin > y && ymin < y + height) && (ymax > y && ymax < y + height));
+    }
+
+    public boolean overlaps (AABB2D other) {
+        return x < other.x + other.width && x + width > other.x && y < other.y + other.height && y + height > other.y;
+    }
+
+    /*
     Setter
     */
 

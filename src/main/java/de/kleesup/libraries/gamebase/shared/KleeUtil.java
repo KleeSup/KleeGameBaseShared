@@ -193,7 +193,6 @@ public final class KleeUtil {
         try {
             Enum.valueOf(enumClass, name);
         } catch (IllegalArgumentException e) {
-            e.printStackTrace();
             return false;
         }
 

@@ -61,7 +61,7 @@ public interface ILoadableChunkWorld3D extends IChunkWorld3D {
      * @throws GameException In case the chunk is not loaded.
      */
     default ILoadedChunk3D getChunkLoaded(float chunkX, float chunkY, float chunkZ){
-        IChunk2D chunk = getChunk(chunkX, chunkY, chunkZ);
+        IChunk3D chunk = getChunk(chunkX, chunkY, chunkZ);
         if(!(chunk instanceof ILoadedChunk3D))throw new GameException("The chunk at "+chunkX+";"+chunkY+" is not loaded!");
         return (ILoadedChunk3D) chunk;
     }

@@ -1,8 +1,13 @@
 package de.kleesup.libraries.gamebase.shared.test.packet;
 
+import com.badlogic.gdx.Gdx;
+import com.badlogic.gdx.Input;
+import de.kleesup.libraries.gamebase.shared.entity.Controller;
+import de.kleesup.libraries.gamebase.shared.entity.PlayerController;
 import de.kleesup.libraries.gamebase.shared.net.packet.kryo.KryoPacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.PacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.ServerPacket;
+import de.kleesup.libraries.gamebase.shared.world.Direction;
 
 import java.util.HashMap;
 
@@ -17,6 +22,15 @@ public class PacketReading {
         PacketReading instance = new PacketReading();
 
         instance.testStorage();
+
+        PlayerController controller = new PlayerController();
+        controller.registerDirectionControl(Direction.RIGHT, new Controller() {
+            @Override
+            public float checkController(Direction direction) {
+                return Gdx.input.isButtonPressed(Input.Buttons.RIGHT) ? 1 : 0;
+            }
+        });
+
 
     }
 

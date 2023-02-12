@@ -6,11 +6,10 @@ import de.kleesup.libraries.gamebase.shared.exception.GameException;
 import java.util.concurrent.Future;
 
 /**
- * @author KleeSup
- * @version 1.1
- * Class created on 08.10.2022
- *
  * An implementation of {@link IChunkWorld2D} which is capable of loading and unloading chunks.
+ * <br>Class created on 08.10.2022</br>
+ * @author KleeSup
+ * @version 1.2
  * @since 1.0
  */
 public interface ILoadableChunkWorld2D extends IChunkWorld2D {
@@ -60,6 +59,17 @@ public interface ILoadableChunkWorld2D extends IChunkWorld2D {
         IChunk2D chunk = getChunk(chunkX, chunkY);
         if(!(chunk instanceof ILoadedChunk2D))throw new GameException("The chunk at "+chunkX+";"+chunkY+" is not loaded!");
         return (ILoadedChunk2D) chunk;
+    }
+
+    /**
+     * Returns a loaded chunk object, or null if the chunk at the given position is not loaded.
+     * @param chunkX The x-coordinate of the chunk.
+     * @param chunkY The y-coordinate of the chunk.
+     * @return
+     */
+    default ILoadedChunk2D getChunkLoadedOrNull(float chunkX, float chunkY){
+        IChunk2D chunk = getChunk(chunkX,chunkY);
+        return chunk instanceof ILoadedChunk2D ? (ILoadedChunk2D) chunk : null;
     }
 
 }

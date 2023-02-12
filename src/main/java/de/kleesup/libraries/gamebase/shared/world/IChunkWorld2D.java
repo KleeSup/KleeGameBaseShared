@@ -11,12 +11,20 @@ package de.kleesup.libraries.gamebase.shared.world;
 public interface IChunkWorld2D extends IGameWorld {
 
     /**
-     * Returns the chunk at the given coordinate.
+     * Returns the chunk at the given chunk-coordinate.
      * @param chunkX The chunks x-coordinate.
      * @param chunkY The chunks y-coordinate
-     * @return The chunk at the given coordinate.
+     * @return The chunk at the given chunk-coordinate.
      */
     IChunk2D getChunk(float chunkX, float chunkY);
+
+    /**
+     * Returns the chunk at a given world-coordinate
+     * @param x The x-value of the world coordinate.
+     * @param y The y-value of the world coordinate.
+     * @return The chunk at the given world-coordinate.
+     */
+    IChunk2D getChunkAt(float x, float y);
 
     /**
      * Checks whether the given coordinate is a valid chunk coordinate.

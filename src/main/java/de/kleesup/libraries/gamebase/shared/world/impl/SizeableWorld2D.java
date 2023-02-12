@@ -10,7 +10,7 @@ import de.kleesup.libraries.gamebase.shared.world.ISizedWorld2D;
  * A simple implementation of {@link ISizedWorld2D} which takes in the final world sizes by its constructor.
  * @since 1.0
  */
-public class SizeableWorld2D implements ISizedWorld2D {
+public abstract class SizeableWorld2D implements ISizedWorld2D {
 
     private final float minX, minY, maxX, maxY;
     public SizeableWorld2D(float minWorldX, float minWorldY, float maxWorldX, float maxWorldY) {

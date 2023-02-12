@@ -1,6 +1,7 @@
 package de.kleesup.libraries.gamebase.shared.world;
 
 import com.badlogic.gdx.math.Vector3;
+import de.kleesup.libraries.gamebase.shared.KleeUtil;
 
 /**
  * <br>Created on 19.10.2022</br>
@@ -31,6 +32,11 @@ public interface IDynamicWorldObject3D extends IWorldObject3D {
      */
     default void applyLinearVelocity(float velocityX, float velocityY, float velocityZ){
         getVelocity().add(velocityX, velocityY, velocityZ);
+    }
+
+    default void applyLinearVelocity(Vector3 velocity){
+        KleeUtil.paramRequireNonNull(velocity, "Velocity cannot be null!");
+        applyLinearVelocity(velocity.x, velocity.y, velocity.z);
     }
 
     /*

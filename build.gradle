@@ -1,11 +1,11 @@
 plugins {
-    id 'java'
+    id 'java-library'
 }
 
 apply plugin: 'maven-publish'
 
 group 'de.kleesup.libraries.gamebase'
-version '1.1.3'
+version '1.1.4'
 
 sourceCompatibility = 1.8 // java 8
 targetCompatibility = 1.8
@@ -20,9 +20,9 @@ dependencies {
     testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.1'
 
     // https://mvnrepository.com/artifact/com.esotericsoftware/kryo
-    implementation group: 'com.esotericsoftware', name: 'kryo', version: '5.2.0'
-    implementation 'com.github.crykn:kryonet:2.22.7'
-    implementation 'com.badlogicgames.gdx:gdx:1.11.0'
+    api 'com.esotericsoftware:kryo:5.4.0'
+    api 'com.github.crykn:kryonet:2.22.7'
+    api 'com.badlogicgames.gdx:gdx:1.11.0'
 
 
 }

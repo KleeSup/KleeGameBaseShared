@@ -1,11 +1,10 @@
 package de.kleesup.libraries.gamebase.shared.math;
 
 /**
+ * A class that contains some simple mathematical functions.
+ * <br>Class created on 17.10.2022</br>
  * @author KleeSup
  * @version 1.0
- * Class created on 17.10.2022
- *
- * A class that contains some simple mathematical functions.
  * @since 1.1
  */
 public final class KleeMath {

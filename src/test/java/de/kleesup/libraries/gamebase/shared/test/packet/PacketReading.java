@@ -2,8 +2,7 @@ package de.kleesup.libraries.gamebase.shared.test.packet;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input;
-import de.kleesup.libraries.gamebase.shared.entity.Controller;
-import de.kleesup.libraries.gamebase.shared.entity.PlayerController;
+import de.kleesup.libraries.gamebase.shared.SnapshotProducer;
 import de.kleesup.libraries.gamebase.shared.net.packet.kryo.KryoPacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.PacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.ServerPacket;
@@ -22,15 +21,7 @@ public class PacketReading {
         PacketReading instance = new PacketReading();
 
         instance.testStorage();
-
-        PlayerController controller = new PlayerController();
-        controller.registerDirectionControl(Direction.RIGHT, new Controller() {
-            @Override
-            public float checkController(Direction direction) {
-                return Gdx.input.isButtonPressed(Input.Buttons.RIGHT) ? 1 : 0;
-            }
-        });
-
+        instance.testSnapshot();
 
     }
 
@@ -52,6 +43,51 @@ public class PacketReading {
         KryoPacketProcessorStorageMap<ServerPacket> kryoMap = KryoPacketProcessorStorageMap.kryoHash();
 
 
+    }
+
+    public void testSnapshot(){
+
+        Test test = new Test("Hello World");
+        System.out.println("Original: "+test);
+        TestSnapshot snapshot = test.toSnapshot();
+        System.out.println("Snapshot: "+snapshot);
+
+        Test loaded = SnapshotProducer.fromSnapshot(test.getClass(), snapshot);
+        System.out.println("Loaded: "+loaded);
+    }
+
+    public static class Test implements SnapshotProducer<TestSnapshot> {
+
+        String text;
+        public Test(String text){
+            this.text = text;
+        }
+
+        public Test(TestSnapshot snapshot){
+            this.text = snapshot.text;
+        }
+
+        @Override
+        public TestSnapshot toSnapshot() {
+            TestSnapshot testSnapshot =  new TestSnapshot();
+            testSnapshot.text = text;
+            return testSnapshot;
+        }
+
+        @Override
+        public String toString() {
+            return "Test{text=\""+text+"\"}@"+hashCode();
+        }
+
+    }
+
+    public static class TestSnapshot{
+        String text;
+
+        @Override
+        public String toString() {
+            return "TestSnapshot{text=\""+text+"\"}@"+hashCode();
+        }
     }
 
 }

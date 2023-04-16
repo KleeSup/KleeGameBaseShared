@@ -4,11 +4,10 @@ import java.io.File;
 import java.net.URI;
 
 /**
+ * Basement class for writing single values into file backends.
+ * <br>Class created on 12.05.2022</br>
  * @author KleeSup
  * @version 1.0
- * Class created on 12.05.2022
- *
- * Basement class for writing single values into file backends.
  * @since 1.0
  */
 public abstract class FileBackendWriter<T> extends FileBackend {

@@ -1,10 +1,11 @@
 package de.kleesup.libraries.gamebase.shared;
 
 import java.util.Objects;
+import java.util.function.Consumer;
 
 /**
  * @author KleeSup
- * @version 1.1
+ * @version 1.2
  * Class created on 17.10.2022
  * <p>
  * A simple utility class containing some helpful methods.
@@ -210,6 +211,30 @@ public final class KleeUtil {
      */
     public static <T> void paramRequireNonNull(T obj, String message){
         if(obj == null)throw new IllegalArgumentException(message);
+    }
+
+    /**
+     * Determines whether a cooldown as worn of or not.
+     * @param currentTime The current timestamp.
+     * @param cooldownStartTime The timestamp the cooldown started.
+     * @param cooldownTime The length of the cooldown.
+     * @return {@code true} if the cooldown has worn off, {@code false} otherwise.
+     */
+    public static boolean hasCooldownWornOff(long currentTime, long cooldownStartTime, long cooldownTime){
+        return currentTime - cooldownStartTime >= cooldownTime;
+    }
+
+    /**
+     * Runs a code part for each element of an array.
+     * @param array The array to execute for.
+     * @param consumer The consumer that accepts the elements of the array.
+     */
+    public static <T> void arrayForEach(T[] array, Consumer<T> consumer){
+        KleeUtil.paramRequireNonNull(array, "Array cannot be null!");
+        KleeUtil.paramRequireNonNull(consumer, "Consumer cannot be null!");
+        for(T t : array){
+            consumer.accept(t);
+        }
     }
 
 }

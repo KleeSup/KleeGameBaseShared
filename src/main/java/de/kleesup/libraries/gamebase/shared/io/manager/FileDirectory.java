@@ -4,11 +4,10 @@ import java.io.File;
 import java.net.URI;
 
 /**
+ * A class that can manage folders/directories utilizing the {@link AdvancedFile} class.
+ * <br>Class created on 07.10.2022</br>
  * @author KleeSup
  * @version 1.0
- * Class created on 07.10.2022
- *
- * A class that can manage folders/directories utilizing the {@link AdvancedFile} class.
  * @since 1.0
  */
 public class FileDirectory extends AdvancedFile {

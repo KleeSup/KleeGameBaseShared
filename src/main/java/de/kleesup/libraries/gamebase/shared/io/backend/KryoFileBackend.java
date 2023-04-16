@@ -12,11 +12,10 @@ import java.net.URI;
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
+ * A file backend that uses a {@link Kryo} instance to serialize the written data (in pair format) into the file.
+ * <br>Class created on 07.10.2022</br>
  * @author KleeSup
  * @version 1.1
- * Class created on 07.10.2022
- *
- *
  * @since 1.0
  */
 public class KryoFileBackend extends PairFileBackend<Object, Object> {

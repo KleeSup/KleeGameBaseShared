@@ -8,11 +8,11 @@ import java.io.IOException;
 import java.net.URI;
 
 /**
+ * A basement class for data management with files.
+ * <br>Class created on 07.10.2022</br>
  * @author KleeSup
  * @version 1.0
- * Class created on 07.10.2022
- *
- * A basement class for data management with files.
+ * @since 1.0
  */
 public class FileBackend extends AdvancedFile implements Disposable {
     public FileBackend(String pathname) {

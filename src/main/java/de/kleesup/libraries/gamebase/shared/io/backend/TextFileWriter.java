@@ -6,16 +6,15 @@ import java.io.PrintWriter;
 import java.net.URI;
 
 /**
+ * An implementation of {@link FileBackendWriter} to write plain text into files.
+ * <br>Class created on 07.10.2022</br>
  * @author KleeSup
  * @version 1.0
- * Class created on 07.10.2022
- *
- * An implementation of {@link FileBackendWriter} to write plain text into files.
  * @since 1.0
  */
 public class TextFileWriter extends FileBackendWriter<String> {
 
-    protected PrintWriter printWriter;
+    private PrintWriter printWriter;
 
     public TextFileWriter(String pathname) throws IOException {
         super(pathname);
@@ -57,6 +56,10 @@ public class TextFileWriter extends FileBackendWriter<String> {
     @Override
     public void dispose() {
         printWriter.close();
+    }
+
+    protected PrintWriter getPrintWriter(){
+        return printWriter;
     }
 
 }

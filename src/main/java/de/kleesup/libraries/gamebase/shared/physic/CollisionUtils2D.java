@@ -10,7 +10,7 @@ import de.kleesup.libraries.gamebase.shared.math.gdx.AABB2D;
  * Note for authors: Remember that the C-code from Falconerd uses AABB.position as the center of the AABB not the bottom left corner!!
  * <br>Created on 12.02.2023</br>
  * @author KleeSup
- * @version 1.2
+ * @version 1.3
  * @since 1.1.4
  */
 public class CollisionUtils2D {
@@ -306,7 +306,7 @@ public class CollisionUtils2D {
      * @param goalWriteTo The goal-AABB to write to (Useful when less object creation is desired).
      * @return The goal-AABB representing the moved  <b>aabb</b> to no longer collide.
      */
-    public AABB2D quickAABBvsAABBResolution(AABB2D aabb, SweptResponse response, AABB2D goalWriteTo){
+    public static AABB2D quickAABBvsAABBResolution(AABB2D aabb, SweptResponse response, AABB2D goalWriteTo){
         goalWriteTo.setSize(aabb.getWidth(), aabb.getHeight());
 
         //response
@@ -319,7 +319,7 @@ public class CollisionUtils2D {
         goalWriteTo.setCenter(response.x + moveOutX, response.y + moveOutY);
         return goalWriteTo;
     }
-    public AABB2D quickAABBvsAABBResolution(AABB2D aabb, SweptResponse response){
+    public static AABB2D quickAABBvsAABBResolution(AABB2D aabb, SweptResponse response){
         return quickAABBvsAABBResolution(aabb, response, new AABB2D());
     }
 
@@ -332,12 +332,12 @@ public class CollisionUtils2D {
      * @param goalWriteTo The goal-AABB to write to (Useful when less object creation is desired).
      * @return The goal-AABB representing the moved <b>aabb</b> to no longer collide.
      */
-    public AABB2D sweptAABBvsAABBResolution(AABB2D aabb, SweptResponse response, AABB2D goalWriteTo){
+    public static AABB2D sweptAABBvsAABBResolution(AABB2D aabb, SweptResponse response, AABB2D goalWriteTo){
         goalWriteTo.setSize(aabb.getWidth(), aabb.getHeight());
         goalWriteTo.setCenter(response.x, response.y); //response-x and y are no longer the
         return goalWriteTo;
     }
-    public AABB2D sweptAABBvsAABBResolution(AABB2D aabb, SweptResponse response){
+    public static AABB2D sweptAABBvsAABBResolution(AABB2D aabb, SweptResponse response){
         return sweptAABBvsAABBResolution(aabb,response,new AABB2D());
     }
 

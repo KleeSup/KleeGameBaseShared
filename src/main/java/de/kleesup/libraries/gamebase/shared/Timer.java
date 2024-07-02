@@ -11,7 +11,7 @@ import java.util.concurrent.atomic.AtomicLong;
  * @version 1.0
  * Class created on 07.10.2022
  *
- * A class that handles cooldowns easily. (Should be multi-threaded)
+ * A class that handles cooldowns easily. (Should be multithreaded)
  * @since 1.0
  */
 @Beta

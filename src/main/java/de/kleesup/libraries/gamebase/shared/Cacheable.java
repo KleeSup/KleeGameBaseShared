@@ -1,11 +1,10 @@
 package de.kleesup.libraries.gamebase.shared;
 
 /**
- * @author KleeSup
- * @version 1.0
- * Class created on 17.10.2022
- *
+ * <p>Class created on 17.10.2022</p>
  * An interface that can be implemented into objects that can be put in any type of caching system.
+ * @author KleeSup
+ * @version 1.1
  * @since 1.0
  */
 public interface Cacheable {

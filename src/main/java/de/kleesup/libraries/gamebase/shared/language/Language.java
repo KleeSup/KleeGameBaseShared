@@ -33,7 +33,7 @@ public abstract class Language {
      * @return The wrapped index.
      */
     public static String wrapParam(final int paramIndex){
-        return paramClosureBegin +""+ paramIndex +""+ paramClosureEnd;
+        return paramClosureBegin + "" + paramIndex + "" + paramClosureEnd;
     }
 
     //a map containing all registered languages by their IDs.
@@ -124,7 +124,7 @@ public abstract class Language {
      *     <br></br>
      *     parameters = ["text", "letters"]
      *     <br></br>
-     *     turns into = "Hello this is a text with many letters!"
+     *     turns into = "Hello this is a <b>text</b> with many <b>letters</b>!"
      * </code>
      * @param key The key to translate.
      * @param params The parameters used to fully translate this key (can be empty or null if the key doesn't require any).

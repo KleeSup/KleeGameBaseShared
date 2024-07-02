@@ -22,7 +22,7 @@ dependencies {
     // https://mvnrepository.com/artifact/com.esotericsoftware/kryo
     api 'com.esotericsoftware:kryo:5.4.0'
     api 'com.github.crykn:kryonet:2.22.7'
-    api 'com.badlogicgames.gdx:gdx:1.11.0'
+    api 'com.badlogicgames.gdx:gdx:1.12.1'
 
 
 }

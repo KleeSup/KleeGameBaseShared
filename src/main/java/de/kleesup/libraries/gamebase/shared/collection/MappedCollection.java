@@ -1,9 +1,9 @@
 package de.kleesup.libraries.gamebase.shared.collection;
 
-import de.kleesup.libraries.gamebase.shared.Builder;
 import de.kleesup.libraries.gamebase.shared.KleeUtil;
 
 import java.util.*;
+import java.util.function.Supplier;
 
 /**
  * A map that holds a collection for each key. This class simplifies inner-value collection accesses.
@@ -14,14 +14,18 @@ import java.util.*;
  */
 public class MappedCollection<K, V> {
 
+    public static <K,V> MappedCollection<K, V> buildHashMapLinkedList(){
+        return new MappedCollection<>(new HashMap<>(), LinkedList::new);
+    }
+
     private final Map<K, Collection<V>> elements;
-    private final Builder<Collection<V>> collectionBuilder;
-    public MappedCollection(Map<K, Collection<V>> map, Builder<Collection<V>> collectionBuilder){
+    private final Supplier<Collection<V>> collectionBuilder;
+    public MappedCollection(Map<K, Collection<V>> map, Supplier<Collection<V>> collectionBuilder){
         KleeUtil.paramRequireNonNull(map, "Map cannot be null!");
         this.elements = map;
         this.collectionBuilder = collectionBuilder;
     }
-    public MappedCollection(Builder<Collection<V>> collectionBuilder){
+    public MappedCollection(Supplier<Collection<V>> collectionBuilder){
         this(new HashMap<>(), collectionBuilder);
     }
     public MappedCollection(){
@@ -39,7 +43,7 @@ public class MappedCollection<K, V> {
         if(containsCollection(key)){
             collection = elements.get(key);
         }else{
-            collection = collectionBuilder.build();
+            collection = collectionBuilder.get();
             elements.put(key, collection);
         }
         return collection;
@@ -87,7 +91,7 @@ public class MappedCollection<K, V> {
      * @return {@code true} if the object was successfully removed, {@code false} otherwise.
      */
     public boolean remove(K key, V value){
-        return remove(key,value,false);
+        return remove(key,value,true);
     }
 
     /**

@@ -1,17 +1,20 @@
 package de.kleesup.libraries.gamebase.shared;
 
 import java.util.Objects;
+import java.util.Optional;
 import java.util.function.Consumer;
 
 /**
  * @author KleeSup
- * @version 1.2
+ * @version 1.3
  * Class created on 17.10.2022
  * <p>
  * A simple utility class containing some helpful methods.
  * @since 1.1
  */
 public final class KleeUtil {
+
+    private KleeUtil(){}
 
     /*
     Methods for each numeric type that check if a coordinate is within a 2D-grid.
@@ -74,102 +77,6 @@ public final class KleeUtil {
             }
         }
         return false;
-    }
-
-    /**
-     * Determines if a given string is a valid byte.
-     * See also: {@link Byte#parseByte(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid byte, {@code false} otherwise.
-     */
-    public static boolean isByte(String str){
-        if(str == null)return false;
-        try {
-            Byte.parseByte(str);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
-    }
-
-    /**
-     * Determines if a given string is a valid short.
-     * See also: {@link Short#parseShort(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid short, {@code false} otherwise.
-     */
-    public static boolean isShort(String str){
-        if(str == null)return false;
-        try {
-            Short.parseShort(str);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
-    }
-
-    /**
-     * Determines if a given string is a valid integer.
-     * See also: {@link Integer#parseInt(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid integer, {@code false} otherwise.
-     */
-    public static boolean isInt(String str){
-        if(str == null)return false;
-        try {
-            Integer.parseInt(str);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
-    }
-
-    /**
-     * Determines if a given string is a valid long.
-     * See also: {@link Long#parseLong(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid long, {@code false} otherwise.
-     */
-    public static boolean isLong(String str){
-        if(str == null)return false;
-        try {
-            Long.parseLong(str);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
-    }
-
-    /**
-     * Determines if a given string is a valid float.
-     * See also: {@link Float#parseFloat(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid float, {@code false} otherwise.
-     */
-    public static boolean isFloat(String str){
-        if(str == null)return false;
-        try {
-            Float.parseFloat(str);
-            return true;
-        }catch (NumberFormatException e){
-            return false;
-        }
-    }
-
-    /**
-     * Determines if a given string is a valid double.
-     * See also: {@link Double#parseDouble(String)}
-     * @param str The string to check for.
-     * @return {@code true} if the given string is a valid double, {@code false} otherwise.
-     */
-    public static boolean isDouble(String str) {
-        if (str == null) return false;
-        try {
-            Double.parseDouble(str);
-            return true;
-        } catch (NumberFormatException e) {
-            return false;
-        }
     }
 
     /**

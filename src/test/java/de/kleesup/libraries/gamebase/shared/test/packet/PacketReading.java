@@ -6,7 +6,6 @@ import de.kleesup.libraries.gamebase.shared.SnapshotProducer;
 import de.kleesup.libraries.gamebase.shared.net.packet.kryo.KryoPacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.PacketProcessorStorageMap;
 import de.kleesup.libraries.gamebase.shared.net.packet.ServerPacket;
-import de.kleesup.libraries.gamebase.shared.world.Direction;
 
 import java.util.HashMap;
 

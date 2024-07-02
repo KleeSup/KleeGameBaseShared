@@ -12,7 +12,7 @@ import de.kleesup.libraries.gamebase.shared.KleeUtil;
  * @version 1.0
  * @since 1.2
  */
-public interface IDynamicWorldObject3D extends IWorldObject3D {
+public interface IDynamicWorldObject3D<Id> extends IWorldObject3D<Id> {
 
     /**
      * Moves this object to a given coordinate.
@@ -23,6 +23,18 @@ public interface IDynamicWorldObject3D extends IWorldObject3D {
         setX(x);
         setY(y);
         setZ(z);
+    }
+
+    /**
+     * Moves this object by given values.
+     * @param x The x-value to move.
+     * @param y The y-value to move.
+     * @param z The z-value to move.
+     */
+    default void translate(float x, float y, float z){
+        setX(getX() + x);
+        setY(getY() + y);
+        setZ(getZ() + z);
     }
 
     /**

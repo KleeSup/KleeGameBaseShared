@@ -7,7 +7,7 @@ package de.kleesup.libraries.gamebase.shared.world;
  * @version 1.0
  * @since 1.1
  */
-public interface IChunkWorld3D extends IGameWorld {
+public interface IChunkWorld3D<Chunk extends IChunk3D> extends IGameWorld {
 
     /**
      * Returns the chunk at the given coordinate.
@@ -16,7 +16,7 @@ public interface IChunkWorld3D extends IGameWorld {
      * @param chunkZ The chunks z-coordinate.
      * @return The chunk at the given coordinate.
      */
-    IChunk3D getChunk(float chunkX, float chunkY, float chunkZ);
+    Chunk getChunk(float chunkX, float chunkY, float chunkZ);
 
     /**
      * Returns the chunk at a given world-coordinate
@@ -25,7 +25,7 @@ public interface IChunkWorld3D extends IGameWorld {
      * @param z The z-value of the world coordinate.
      * @return The chunk at the given world-coordinate.
      */
-    IChunk3D getChunkAt(float x, float y, float z);
+    Chunk getChunkAt(float x, float y, float z);
 
     /**
      * Checks whether the given coordinate is a valid chunk coordinate.

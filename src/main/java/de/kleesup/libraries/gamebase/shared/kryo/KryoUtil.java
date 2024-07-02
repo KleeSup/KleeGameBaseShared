@@ -20,7 +20,7 @@ public class KryoUtil {
      */
     public static void registerAllFor(Kryo kryo, Class<?>... classes){
         KleeUtil.paramRequireNonNull(kryo, "Kryo instance cannot be null!");
-        if(classes == null || classes.length == 0)return;
+        if(classes == null)return;
         for(Class<?> clazz : classes){
             kryo.register(clazz);
         }

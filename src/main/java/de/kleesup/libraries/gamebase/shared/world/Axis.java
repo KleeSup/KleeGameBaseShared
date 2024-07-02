@@ -4,7 +4,7 @@ import com.badlogic.gdx.math.Vector2;
 import com.badlogic.gdx.math.Vector3;
 
 /**
- * A enum class implementing all axis directions in a 2-dimensional and 3-dimensional space.
+ * An enum class implementing all axis directions in a 2-dimensional and 3-dimensional space.
  * <br>Created on 03.02.2023</br>
  * @author KleeSup
  * @version 1.1

@@ -50,6 +50,12 @@ public interface TileContainer<T> {
      */
     T setTile(float x, float y, T tile);
 
-
+    /**
+     * Checks whether a given position has a tile set.
+     * @param x The x-coordinate of the tile.
+     * @param y The y-coordinate of the tile.
+     * @return {@code true} if a tile at the given positions exists, {@code false} otherwise.
+     */
+    boolean hasTile(float x, float y);
 
 }

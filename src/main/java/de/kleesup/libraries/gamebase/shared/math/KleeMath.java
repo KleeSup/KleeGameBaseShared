@@ -1,5 +1,7 @@
 package de.kleesup.libraries.gamebase.shared.math;
 
+import de.kleesup.libraries.gamebase.shared.KleeUtil;
+
 /**
  * A class that contains some simple mathematical functions.
  * <br>Class created on 17.10.2022</br>
@@ -8,6 +10,8 @@ package de.kleesup.libraries.gamebase.shared.math;
  * @since 1.1
  */
 public final class KleeMath {
+
+    private KleeMath(){}
 
     /**
      * Checks the given value and retrieves it when it is between its max and min bounds. Otherwise, those boundaries are returned.

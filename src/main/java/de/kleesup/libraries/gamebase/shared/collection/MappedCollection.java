@@ -29,7 +29,7 @@ public class MappedCollection<K, V> {
         this(new HashMap<>(), collectionBuilder);
     }
     public MappedCollection(){
-        this(ArrayList::new);
+        this(LinkedList::new);
     }
 
     /**

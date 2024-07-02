@@ -5,7 +5,7 @@ import com.badlogic.gdx.Graphics;
 /**
  * Used for objects that need updates via a {@link IGameWorld}.
  */
-public interface IWorldUpdater {
+public interface IWorldUpdater<T extends IGameWorld> {
 
     /**
      * The main update method.
@@ -14,6 +14,6 @@ public interface IWorldUpdater {
      *              NOTE: This is not always the {@link Graphics#getDeltaTime()} because some objects might only
      *              get updated after some time periods.
      */
-    void update(IGameWorld world, float delta);
+    void update(T world, float delta);
 
 }

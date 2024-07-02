@@ -4,7 +4,6 @@ package de.kleesup.libraries.gamebase.shared.world;
  * @author KleeSup
  * @version 1.0
  * Class created on 08.10.2022
- *
  * A world that is sized by min and max x and y coordinates.
  * @since 1.0
  */

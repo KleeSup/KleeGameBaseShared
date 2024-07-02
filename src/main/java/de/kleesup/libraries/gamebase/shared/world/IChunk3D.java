@@ -26,8 +26,4 @@ public interface IChunk3D {
      */
     float getChunkZ();
 
-    /**
-     * @return The world containing this chunk object.
-     */
-    IChunkWorld3D getWorld();
 }

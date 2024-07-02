@@ -10,7 +10,7 @@ import de.kleesup.libraries.gamebase.shared.world.IWorldObject2D;
  * @version 1.0
  * @since 1.2
  */
-public interface KryoNetWorldObject2D extends IWorldObject2D {
+public interface KryoNetWorldObject2D<Id> extends IWorldObject2D<Id> {
 
     Connection getConnection();
 

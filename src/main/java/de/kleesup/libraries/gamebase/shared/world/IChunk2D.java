@@ -20,9 +20,4 @@ public interface IChunk2D {
      */
     float getChunkY();
 
-    /**
-     * @return The world containing this chunk object.
-     */
-    IChunkWorld2D getWorld();
-
 }

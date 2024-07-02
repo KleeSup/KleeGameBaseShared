@@ -52,4 +52,13 @@ public interface BlockContainer<B> {
      */
     B setBlock(float x, float y, float z, B block);
 
+    /**
+     * Checks whether a given position has a block set.
+     * @param x The x-coordinate of the block.
+     * @param y The y-coordinate of the block.
+     * @param z The z-coordinate of the block.
+     * @return {@code true} if a block at the given positions exists, {@code false} otherwise.
+     */
+    boolean hasBlock(float x, float y, float z);
+
 }

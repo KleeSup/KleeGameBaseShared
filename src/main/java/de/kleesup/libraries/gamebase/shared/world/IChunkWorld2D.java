@@ -4,11 +4,11 @@ package de.kleesup.libraries.gamebase.shared.world;
  * @author KleeSup
  * @version 1.0
  * Class created on 08.10.2022
- *
+
  * An implementation of {@link IGameWorld} which is divided into chunks (2D grid system).
  * @since 1.0
  */
-public interface IChunkWorld2D extends IGameWorld {
+public interface IChunkWorld2D<Chunk extends IChunk2D> extends IGameWorld {
 
     /**
      * Returns the chunk at the given chunk-coordinate.
@@ -16,7 +16,7 @@ public interface IChunkWorld2D extends IGameWorld {
      * @param chunkY The chunks y-coordinate
      * @return The chunk at the given chunk-coordinate.
      */
-    IChunk2D getChunk(float chunkX, float chunkY);
+    Chunk getChunk(float chunkX, float chunkY);
 
     /**
      * Returns the chunk at a given world-coordinate
@@ -24,7 +24,7 @@ public interface IChunkWorld2D extends IGameWorld {
      * @param y The y-value of the world coordinate.
      * @return The chunk at the given world-coordinate.
      */
-    IChunk2D getChunkAt(float x, float y);
+    Chunk getChunkAt(float x, float y);
 
     /**
      * Checks whether the given coordinate is a valid chunk coordinate.

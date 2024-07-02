@@ -12,16 +12,26 @@ import de.kleesup.libraries.gamebase.shared.KleeUtil;
  * @version 1.0
  * @since 1.2
  */
-public interface IDynamicWorldObject2D extends IWorldObject2D {
+public interface IDynamicWorldObject2D<Id> extends IWorldObject2D<Id> {
 
     /**
-     * Moves this object to a given coordinate.
+     * Teleports this object to a given coordinate.
      * @param x The x-point of the new coordinate.
      * @param y The y-point of the new coordinate.
      */
     default void teleport(float x, float y){
         setX(x);
         setY(y);
+    }
+
+    /**
+     * Moves this object by given values.
+     * @param x The x-value to move.
+     * @param y The y-value to move.
+     */
+    default void translate(float x, float y){
+        setX(getX() + x);
+        setY(getY() + y);
     }
 
     /**
